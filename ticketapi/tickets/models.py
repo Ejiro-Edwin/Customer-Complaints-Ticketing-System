@@ -19,7 +19,7 @@ class Category(models.Model):
     slug = models.SlugField()
 
     def __str__(self):
-       return self.name
+           return self.name
 
 class Ticket(models.Model):
     title = models.CharField(max_length=255)

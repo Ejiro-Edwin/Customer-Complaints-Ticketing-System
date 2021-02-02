@@ -12,6 +12,9 @@ urlpatterns = [
         'put': 'update',
         'delete': 'destroy'
     })),
+    path('tickets/<str:ticket_id>', TicketViewSet.as_view({
+        'get': 'retrieveticketId'
+    })),
     path('categories', CategoryViewSet.as_view({
         'get': 'list',
         'post': 'create'
