@@ -21,6 +21,5 @@ urlpatterns = [
         'put': 'update',
         'delete': 'destroy'
     })),
-    path('category',CategoryViewSet.as_view()),
-    path('user',UserViewSet.as_view())
+    path('user',UserViewSet)
 ]

@@ -61,13 +61,13 @@ class CategoryViewSet(viewsets.ViewSet):
         return Response(serializer.data)
 
     def update(self, request, pk=None):  #  /api/tickets/<str:id>
-        ticket = Ticket.objects.get(id=pk)
-        serializer = TicketSerializer(instance=ticket, data=request.data)
+        category = Category.objects.get(id=pk)
+        serializer = CategorySerializer(instance=category, data=request.data)
         serializer.is_valid(raise_exception=True)
         serializer.save()
         return Response(serializer.data, status=status.HTTP_202_ACCEPTED)
 
     def destroy(self, request, pk=None):  #  /api/tickets/<str:id>
-        ticket = Ticket.objects.get(id=pk)
-        ticket.delete()
+        category = Category.objects.get(id=pk)
+        category.delete()
         return Response(status=status.HTTP_204_NO_CONTENT)
